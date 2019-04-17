@@ -37,18 +37,19 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
- 
   print_statistics(test,SIZE);
 
 }
 
 void print_statistics(unsigned char * arr, unsigned int len) {
+  printf("YOUR ARRAY:");
   print_array(arr,len);
   printf("MEDIAN:%d\r\n",find_median(arr,len));
   printf("MEAN:%d\r\n",find_mean(arr,len));
-  printf("MAX:%d\r\n",find_maximum(arr,len));
-  printf("MIN:%d\r\n",find_minimum(arr,len));
+  printf("MAXIMUM:%d\r\n",find_maximum(arr,len));
+  printf("MINIMUM:%d\r\n",find_minimum(arr,len));
   sort_array(arr,len);
+  printf("YOUR SORTED ARRAY:");
   print_array(arr,len);
 }
 

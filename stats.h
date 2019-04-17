@@ -23,6 +23,8 @@
 
 /**
  * @brief Prints the statics of an array maximum, minimum, mean and median.
+ * @param array The array of unsigned char
+ * @param len LEngth of array
  * */
 void print_statistics(unsigned char * array, unsigned int len);
 
