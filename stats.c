@@ -96,7 +96,7 @@ void sort_array(unsigned char * a, unsigned int len) {
     int i = 0, j = 0, tmp;
     for (i = 0; i < len; i++) {
        for (j = 0; j < len - i - 1; j++) {
-            if (a[j] > a[j + 1]) { 
+            if (a[j] < a[j + 1]) { 
                tmp = a[j];
                a[j] = a[j + 1];
                a[j + 1] = tmp;
