@@ -23,6 +23,7 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "stats.h"
 
 /* Size of the Data Set */
@@ -43,7 +44,7 @@ void main() {
 
 void print_statistics(unsigned char * arr, unsigned int len) {
   print_array(arr,len);
-  //printf("MEDIAN:%d\r\n",find_median(arr,len));
+  printf("MEDIAN:%d\r\n",find_median(arr,len));
   printf("MEAN:%d\r\n",find_mean(arr,len));
   printf("MAX:%d\r\n",find_maximum(arr,len));
   printf("MIN:%d\r\n",find_minimum(arr,len));
@@ -59,8 +60,26 @@ void print_array(unsigned char * array, unsigned int len) {
 }
 
 unsigned char find_median(unsigned char * array, unsigned int len) {
-    
-    return 0;
+    //sort
+    unsigned char * a = malloc(sizeof(unsigned char)*len);
+    for(unsigned int k=0; k<len;k++){
+       a[k]=array[k];
+    }
+    int i = 0, j = 0, tmp;
+    for (i = 0; i < len; i++) {
+       for (j = 0; j < len - i - 1; j++) {
+            if (a[j] > a[j + 1]) {
+               tmp = a[j];
+               a[j] = a[j + 1];
+               a[j + 1] = tmp;
+           }
+       }
+    }
+    unsigned int res;
+    if(len%2!=0) res = a[len/2];
+    else res = (a[len/2]+a[(len/2)-1])/2;
+    free(a);
+    return res;
 }
 
 unsigned char find_mean(unsigned char * array, unsigned int len) {
