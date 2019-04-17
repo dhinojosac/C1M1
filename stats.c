@@ -36,9 +36,31 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
 
 }
 
-/* Add other Implementation File Code Here */
+void print_statistics(void) {
+}
+
+void print_array(unsigned char * array, unsigned int len) {
+}
+
+unsigned char find_median(unsigned char * array, unsigned int len) {
+    return 0;
+}
+
+unsigned char find_mean(unsigned char * array, unsigned int len) {
+    return 0;
+}
+
+unsigned char find_maximum(unsigned char * array, unsigned int len) {
+    return 0;
+}
+
+unsigned char find_minimum(unsigned char * array, unsigned int len) {
+    return 0;
+}
+
+void sort_array(unsigned char * array, unsigned int len) {
+}
+

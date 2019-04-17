@@ -21,20 +21,74 @@
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
+/**
+ * @brief Prints the statics of an array maximum, minimum, mean and median.
+ * */
+void print_statistics(void);
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief Prints the array to the screen.
  *
- * <Add Extended Description Here>
+ * This function prints the array of unsigned char to the screen.
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param array The array of unsigned char to print
+ * @param len Length of array to print
+ * */
+void print_array(unsigned char * array, unsigned int len);
+
+/**
+ * @brief Returns the median from an array.
  *
- * @return <Add Return Informaiton here>
- */
+ * This function find the median value from array of unsigned char.
+ *
+ * @param array The array of unsigned char
+ * @param len Length of array
+ * @return The median value from array
+ * */
+unsigned char find_median(unsigned char * array, unsigned int len);
+
+/**
+ * @brief Returns the mean from an array.
+ *
+ * This function find the mean value from array of unsigned char.
+ *
+ * @param array The array of unsigned char
+ * @param len Length of array
+ * @return The median value from array
+ * */
+unsigned char find_mean(unsigned char * array, unsigned int len);
+
+/**
+ * @brief Returns the maximum from an array.
+ *
+ * This function finds the maximum values from the array of unsigned char.
+ *
+ * @param array The array of unsigned char
+ * @param len Length of array
+ * @return The median value from array
+ * */
+unsigned char find_maximum(unsigned char * array, unsigned int len);
+
+/**
+ * @brief Returns the minimum from an array.
+ *
+ * This function finds the minimum values from the array of unsigned char.
+ *
+ * @param array The array of unsigned char
+ * @param len Length of array
+ * @return The median value from array
+ * */
+unsigned char find_minimum(unsigned char * array, unsigned int len);
+
+/**
+ * @brief Sorts an array from largest to smallest.
+ *
+ * This sorts the array of unsigned char from largest to smallest values.
+ *
+ * @param array The array of unsigned char
+ * @param len Length of array
+ * */
+void sort_array(unsigned char * array, unsigned int len);
 
 
 #endif /* __STATS_H__ */
