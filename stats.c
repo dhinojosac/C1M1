@@ -47,7 +47,8 @@ void print_statistics(unsigned char * arr, unsigned int len) {
   printf("MEAN:%d\r\n",find_mean(arr,len));
   printf("MAX:%d\r\n",find_maximum(arr,len));
   printf("MIN:%d\r\n",find_minimum(arr,len));
-
+  sort_array(arr,len);
+  print_array(arr,len);
 }
 
 void print_array(unsigned char * array, unsigned int len) {
@@ -90,6 +91,17 @@ unsigned char find_minimum(unsigned char * array, unsigned int len) {
     return min;
 }
 
-void sort_array(unsigned char * array, unsigned int len) {
+void sort_array(unsigned char * a, unsigned int len) {
+    //Implement Bubble sort
+    int i = 0, j = 0, tmp;
+    for (i = 0; i < len; i++) {
+       for (j = 0; j < len - i - 1; j++) {
+            if (a[j] > a[j + 1]) { 
+               tmp = a[j];
+               a[j] = a[j + 1];
+               a[j + 1] = tmp;
+           }
+       }
+    }
 }
 
