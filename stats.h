@@ -24,7 +24,7 @@
 /**
  * @brief Prints the statics of an array maximum, minimum, mean and median.
  * */
-void print_statistics(void);
+void print_statistics(unsigned char * array, unsigned int len);
 
 /**
  * @brief Prints the array to the screen.
