@@ -30,7 +30,7 @@
 include sources.mk
 
 # Target
-TARGET = c1m2
+TARGET = main
 
 OBJS = $(SOURCES:.c=.o)
 DEPS = $(SOURCES:.c=.d)

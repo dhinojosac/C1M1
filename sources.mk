@@ -11,8 +11,11 @@
 
 # Add your Source files to this variable
 ifeq ($(PLATFORM),HOST)
-	SOURCES = ./main.c \
-	  	  ./memory.c
+	SOURCES = src/main.c    \
+	  	  src/memory.c  \
+		  src/data.c    \
+		  src/course1.c \
+		  src/stats.c
 else
 	SOURCES= main.c \
 		 memory.c \
@@ -23,11 +26,14 @@ endif
 
 # Add your include paths to this variable
 ifeq ($(PLATFORM),HOST)
-	INCLUDE_PATH = -I../include/common
-	INCLUDES = memory.h \
-		   platform.h
+	INCLUDE_PATH = -Iinclude/common
+	INCLUDES = memory.h   \
+		   platform.h \
+		   course1.h  \
+		   data.h     \
+		   stats.h
 else
-	INCLUDE_PATH = -I../include/common -I../include/msp432 -I../include/CMSIS
+	INCLUDE_PATH = -I./include/common -I./include/msp432 -I./include/CMSIS
 	INCLUDES = memory.h \
 		   platform.h \
 		   msp_compatibility.h \
