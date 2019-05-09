@@ -90,4 +90,13 @@ void set_all(char * ptr, char value, unsigned int size);
  */
 void clear_all(char * ptr, unsigned int size);
 
+/**
+ * @brief Take two byte pointers and a length of bytes to move from the
+ * the source location to the destination
+ * @param src Pointer to source
+ * @param dst Pointer to destination
+ * @param length Length of data to move from src to dst
+ */
+uint8_t *  my_memmove(uint8_t * src, uint8_t * dst, size_t length);
+
 #endif /* __MEMORY_H__ */
