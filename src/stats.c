@@ -29,6 +29,7 @@
 /* Size of the Data Set */
 #define SIZE (40)
 
+/*
 void main() {
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
@@ -40,6 +41,7 @@ void main() {
   print_statistics(test,SIZE);
 
 }
+*/
 
 void print_statistics(unsigned char * arr, unsigned int len) {
   printf("YOUR ARRAY:");
@@ -54,10 +56,12 @@ void print_statistics(unsigned char * arr, unsigned int len) {
 }
 
 void print_array(unsigned char * array, unsigned int len) {
+    #ifdef VERBOSE
     for(unsigned int i=0; i<len; i ++){
         printf("%d ",array[i]);
     }
     printf("\r\n");
+    #endif
 }
 
 unsigned char find_median(unsigned char * array, unsigned int len) {

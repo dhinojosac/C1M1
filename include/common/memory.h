@@ -156,6 +156,6 @@ int32_t * reserve_words(size_t length);
  * @param dst Pointer to destination
  * @param length Length of data to move from src to dst
  */
-void free_words(int32_t * src);
+void free_words(uint32_t * src);
 
 #endif /* __MEMORY_H__ */

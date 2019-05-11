@@ -54,6 +54,7 @@ int main(void) {
     PRINTF("%c", buffer[i]);
   }
   PRINTF("\n");
+
   return 0;
 }
 

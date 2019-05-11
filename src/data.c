@@ -44,6 +44,6 @@ uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base)
 uint8_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base)
 {
 	//TODO:implement
-	return 411;
+	return 15;
 }
 
