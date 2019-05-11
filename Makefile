@@ -12,8 +12,9 @@
 #------------------------------------------------------------------------------
 # Makefile used to generates files to C1M2 coursera assignment.
 #
-# Use: make [TARGET] [PLATFORM-OVERRIDES]
+# Use: make [TARGET] [PLATFORM] [DEBUG] [RUN]
 #
+ 
 # Build Targets:
 #      	<FILE>.o  - Builds <FILE>.o object file
 #       <FILE>.i
@@ -21,10 +22,16 @@
 #	build	  - Builds and links all source files
 #	compile-all       - Same as build but no linked 
 #
-# Platform Overrides:
-#      	CPU
-#	ARCH
-#	SPECS
+# PLATFORM:
+#      	HOST
+#	MSP430 //default
+#
+#
+# DEBUG:
+#	VERBOSE
+#
+# RUN:
+#	COURSE1
 #
 #------------------------------------------------------------------------------
 include sources.mk
@@ -49,7 +56,7 @@ ifeq ($(PLATFORM),HOST)
 	LD = ld
 	LDFLAGS = -Wl,-Map=$(TARGET).map
 	CFLAGS = -Wall -Werror -g -O0 -std=c99
-	DEFINES = -DHOST
+	DEFINES := -DHOST
 	PRINT_SIZE = size
 else #MSP432
 	CC = arm-none-eabi-gcc
@@ -60,6 +67,13 @@ else #MSP432
 	PRINT_SIZE = arm-none-eabi-size
 endif
 
+ifeq ($(DEBUG),VERBOSE)
+	DEFINES := $(DEFINES) -DVERBOSE
+endif
+
+ifeq ($(RUN),COURSE1)
+	DEFINES := $(DEFINES) -DCOURSE1
+endif
 
 #Generate preprocessed output .i files, using -E flag
 %.i: %.c
@@ -91,5 +105,5 @@ $(TARGET).out: $(OBJS) $(DEPS)
 #Clean
 .PHONY: clean
 clean:
-	rm -rf src/*.o src/*.d src/*.i src/*.asm src/*.out
+	rm -rf src/*.o src/*.d src/*.i src/*.asm src/*.out *.map
 
