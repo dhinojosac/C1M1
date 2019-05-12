@@ -16,3 +16,8 @@
 - [X] Modify **stats.c** and **stats.h** to enable/disable **print_array()** to debug. 
 - [X] Run **course1()** function to test the whole program.
 - [ ] Pass all test on **course1()**.
+
+### Instructions
+-  ```make build PLATFORM=HOST DEBUG=VERBOSE RUN=COURSE1```
+-  ```./main.out```
+
