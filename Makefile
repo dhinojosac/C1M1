@@ -105,5 +105,5 @@ $(TARGET).out: $(OBJS) $(DEPS)
 #Clean
 .PHONY: clean
 clean:
-	rm -rf src/*.o src/*.d src/*.i src/*.asm src/*.out *.map
+	rm -rf src/*.o src/*.d src/*.i src/*.asm src/*.out *.map *.out
 
