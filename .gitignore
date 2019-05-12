@@ -3,3 +3,5 @@
 *.asm
 *.d
 *.out
+*.map
+
