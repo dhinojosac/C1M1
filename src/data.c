@@ -41,9 +41,31 @@ uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base)
     return i+1;
 }
 
-uint8_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base)
+int32_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base)
 {
-	//TODO:implement
-	return 15;
+    int32_t val = 0;
+    if(base==BASE_16)
+    {
+      while (*ptr) {
+        // get current character then increment
+        uint8_t byte = *ptr++;
+        // transform hex character to the 4bit equivalent number, using the ascii table indexes
+        if (byte >= '0' && byte <= '9') byte = byte - '0';
+        else if (byte >= 'a' && byte <='f') byte = byte - 'a' + 10;
+        else if (byte >= 'A' && byte <='F') byte = byte - 'A' + 10;
+        // shift 4 to make space for new digit, and add the 4 bits of the new digit
+        val = (val << 4) | (byte & 0xF);
+      }
+    }
+    else if(base==BASE_10)
+    {
+      while (*ptr) {
+        val = (val << 3) + (val << 1) + (*ptr) - '0';
+        ptr++;
+      }
+    }
+
+    return val;
+
 }
 

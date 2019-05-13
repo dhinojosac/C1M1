@@ -42,14 +42,22 @@ int8_t test_data1() {
   value = my_atoi( ptr, digits, BASE_16);
   #ifdef VERBOSE
   PRINTF("  Initial number: %d\n", num);
+  PRINTF("my_itoa: %s\n",ptr);
   PRINTF("  Final Decimal number: %d\n", value);
   #endif
   free_words( (uint32_t*)ptr );
 
   if ( value != num )
   {
+    #ifdef VERBOSE
+    PRINTF("   NOT PASSED\n");
+    #endif
     return TEST_ERROR;
   }
+  #ifdef VERBOSE
+    PRINTF("   PASSED\n");
+  #endif
+
   return TEST_NO_ERROR;
 }
 
@@ -77,6 +85,7 @@ int8_t test_data2() {
 
   if ( value != num )
   {
+
     return TEST_ERROR;
   }
   return TEST_NO_ERROR;
@@ -195,7 +204,6 @@ int8_t test_memmove3() {
     }
   }
 
-
   free_words( (uint32_t*)set );
   return ret;
 
@@ -234,7 +242,6 @@ int8_t test_memcopy() {
       ret = TEST_ERROR;
     }
   }
-
   free_words( (uint32_t*)set );
   return ret;
 }
@@ -280,7 +287,6 @@ int8_t test_memset()
       ret = TEST_ERROR;
     }
   }
-  
   free_words( (uint32_t*)set );
   return ret;
 }
@@ -316,7 +322,6 @@ int8_t test_reverse()
       ret = TEST_ERROR;
     }
   }
-
   free_words( (uint32_t*)copy );
   return ret;
 }
@@ -338,6 +343,12 @@ void course1(void)
 
   for ( i = 0; i < TESTCOUNT; i++) 
   {
+    #ifdef VERBOSE
+    if(results[i]==TEST_ERROR)
+    PRINTF("   NOT PASSED\n");
+    else 
+    PRINTF("    PASSED\n");
+    #endif
     failed += results[i];
   }
 
